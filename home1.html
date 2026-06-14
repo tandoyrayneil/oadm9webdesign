@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME USER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(bgforhome.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        
+        .main-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px 35px;
+            border-radius: 16px;
+
+            border: 1px solid rgba(225, 0, 0, 0.3);
+            box-shadow: 0 0 25px rgba(225, 0, 0, 0.5),
+                        inset 0 0 15px rgba(225, 0, 0, 0.2);
+
+            backdrop-filter: blur(4px);
+
+            
+            width: max-content; 
+            flex-grow: 0;
+
+            min-width: 820px;
+            flex-shrink: 0;
+        }
+
+        
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: none; 
+        }
+
+        .blue-arch {
+            background-color: #111; 
+            width: 220px;
+            height: 220px;
+            border-radius: 110px 0 0 110px; 
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .profile-img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        
+        .title-section {
+            flex: none; 
+            width: max-content;
+        }
+
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 88px;
+            white-space: nowrap;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1;
+
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            width: max-content;
+        }
+
+        .year {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 48px;
+            font-weight: 500;
+            color: #a0a5ad;
+        }
+
+        .subtitle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #e0e0e0;
+            margin-top: 15px;
+        }
+
+        .square-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            display: inline-block;
+        }
+
+        
+        .navigation-menu {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #8c92ac;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+    color: white;
+    text-shadow: 0 0 10px red;
+
+    box-shadow:
+        0 0 10px red,
+        0 0 20px red;
+
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+        .subtitle span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-content">
+        <div class="profile-section">
+            <div class="blue-arch">
+                <img src="photo.png" alt="Content Creator" class="profile-img">
+            </div>
+        </div>
+
+        <div class="title-section">
+            <h1 class="main-title">RAY'S WEBSITE<span class="year">2026</span></h1>
+            <div class="subtitle">
+                <p class="square-bullet"></p> PLEASE CLICK THE <span>'START'</span> BUTTON TO PROCEED 
+            </div>
+        </div>
+    </main>
+
+    <nav class="navigation-menu">
+    <a href="aboutme.html" class="menu-item">START</a>
+    
+    <a href="logout.html" class="menu-item">LOG OUT</a>
+</nav>
+  
+</body>
+</html>

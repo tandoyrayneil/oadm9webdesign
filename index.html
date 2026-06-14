@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="lab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url(1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 8px; 
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff; 
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        
+        input[type="text"]:focus, 
+        input[type="password"]:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #ff0000; 
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2 style="color: #FFFFFF">La Hermosa</h2>
+        </div>
+
+        <ul>
+            <li><a href="#">Daily</a></li>
+            <li><a href="#">Rankings</a></li>
+            <li><a href="#">Free</a></li>
+            <li><a href="#">Genre +</a></li>
+            <li><a href="#">Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <h2 style="color: #FFFFFF;">Sign up / Login with SNS account</h2>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-apple"></i></a>
+        </div>
+
+        <h3>Sign up / Login with email</h3>
+
+        <form onsubmit="return false;">
+            <input type="text" id="username" placeholder="Username">
+
+            <input type="password" id="password" placeholder="Password">
+
+            <div class="checkbox">
+                <input type="checkbox" id="keep">
+                <label for="keep">Keep me logged in</label>
+            </div>
+
+            <button type="button" onclick="login()">Login</button>
+
+            <div class="links">
+                <a href="signup.html">Sign Up</a>
+                <a href="#">Find password</a>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+    function login() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        if(username === "rayneiltandoy" && password === "bagsakangmajor") {
+            window.location.href = "home1.html";
+        }
+        else if(username === "angetomboy" && password === "thatismytomboy") {
+            window.location.href = "angge.html";
+        }
+        else if(username === "miksraner" && password === "linayakokangbelison") {
+            window.location.href = "index (2).html";
+        }
+        else {
+            alert("Invalid username or password.");
+        }
+    }
+    </script>
+</body>
+</html>

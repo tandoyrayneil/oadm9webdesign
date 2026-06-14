@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mekaila | Interactive Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#12041d',      
+
+              purple: '#30133c',   
+              pink: '#ff69b4',       
+              lightPink: '#f797d3',  
+              accent: '#d4499d',     
+              bubble: '#fdf2f8'
+            }
+          },
+          fontFamily: {
+            chewy: ['Chewy', 'cursive'],
+            fredoka: ['Fredoka', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-halftone {
+      background-image: radial-gradient(rgba(255, 105, 180, 0.15) 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+    }
+    
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12041d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff69b4;
+      border-radius: 9999px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-white font-sans min-h-screen selection:bg-brand-pink selection:text-white relative overflow-x-hidden">
+
+  <div class="absolute inset-0 bg-halftone pointer-events-none z-0"></div>
+
+  <div class="absolute top-10 left-10 w-96 h-96 bg-brand-pink/20 rounded-full blur-3xl pointer-events-none z-0"></div>
+  <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <div class="max-w-5xl mx-auto px-4 py-8 relative z-10">
+    
+    <header class="bg-brand-purple/75 backdrop-blur-md border-4 border-brand-accent rounded-[2.5rem] p-6 md:p-8 shadow-2xl relative overflow-hidden mb-8">
+
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <div class="md:col-span-7 space-y-6">
+          <div class="space-y-1">
+            <h1 class="text-6xl md:text-8xl font-chewy text-white tracking-wider drop-shadow-[0_4px_0_rgba(255,105,180,1)] uppercase select-none">
+              MEKAILA RANER
+            </h1>
+            <p class="text-3xl md:text-4xl font-fredoka text-brand-lightPink font-bold">
+              Hallo, I'm <span class="text-white underline decoration-brand-pink decoration-wavy">Mekay</span>
+            </p>
+          </div>
+          
+          <p class="text-slate-200 text-base md:text-lg leading-relaxed bg-brand-dark/40 p-4 rounded-2xl border border-white/10 backdrop-blur-sm">
+            I am Mekaila! A simple soul who finds peace in warm skies, late-nights thoughts, and the comfort of coffee. 
+            Living softly, loving deeply, and enjoying every little moment in between.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-brand-pink text-brand-dark font-fredoka font-semibold rounded-full shadow-lg text-sm flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap"></i> Office Administration Student
+            </span>
+            <span class="px-4 py-2 bg-brand-purple border border-brand-pink text-white font-fredoka rounded-full shadow-lg text-sm flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-pink"></i> Belison, Antque
+            </span>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 flex justify-center relative">
+          <div class="absolute -top-4 -left-4 text-brand-lightPink text-3xl animate-float" style="animation-delay: 0s;">
+            <i class="fa-solid fa-butterfly"></i>
+          </div>
+          <div class="absolute -bottom-2 right-4 text-brand-pink text-2xl animate-float" style="animation-delay: 2s;">
+            <i class="fa-solid fa-butterfly"></i>
+          </div>
+
+          <div class="relative w-72 h-80 bg-brand-pink p-2 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] shadow-[0_10px_30px_rgba(255,105,180,0.4)] overflow-hidden border-4 border-white transform hover:scale-105 transition-transform duration-300">
+
+            <img src="mekay1.jpg" alt="Mekaila" class="w-full h-full object-cover object-center rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]" onerror="this.src='https://imagesC:7d9cac3-320e-4ffa-9a68-5b3dc5f56ba7.jpg'">
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <nav class="flex justify-between items-center bg-brand-purple/90 border-4 border-brand-accent rounded-full p-2 mb-8 shadow-xl max-w-md mx-auto">
+      <div class="flex gap-2 w-full justify-around">
+        <button onclick="switchTab('home-tab')" id="btn-home-tab" class="tab-btn px-6 py-2.5 rounded-full font-fredoka text-lg transition-all duration-300 bg-brand-pink text-brand-dark shadow-md font-semibold">
+          Home
+        </button>
+        <button onclick="switchTab('profile-tab')" id="btn-profile-tab" class="tab-btn px-6 py-2.5 rounded-full font-fredoka text-lg transition-all duration-300 text-slate-300 hover:text-white">
+          Profile
+        </button>
+        <button onclick="switchTab('about-tab')" id="btn-about-tab" class="tab-btn px-6 py-2.5 rounded-full font-fredoka text-lg transition-all duration-300 text-slate-300 hover:text-white">
+          About
+        </button>
+      </div>
+    </nav>
+
+    <main id="home-tab" class="tab-content active space-y-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 md:p-8 shadow-xl">
+          <h2 class="text-3xl font-fredoka text-brand-lightPink mb-6 border-b-2 border-brand-pink/30 pb-2 flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> My Profile :
+          </h2>
+          
+          <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center py-2 border-b border-white/5 gap-2">
+              <span class="w-32 bg-brand-pink/20 text-brand-lightPink px-3 py-1 rounded-lg text-sm font-fredoka">Name</span>
+              <span class="text-white font-medium text-lg">: Maria Mekaila Jean O. Raner</span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center py-2 border-b border-white/5 gap-2">
+              <span class="w-32 bg-brand-pink/20 text-brand-lightPink px-3 py-1 rounded-lg text-sm font-fredoka">Education</span>
+              <span class="text-white font-medium text-lg">: University of Antique</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center py-2 border-b border-white/5 gap-2">
+              <span class="w-32 bg-brand-pink/20 text-brand-lightPink px-3 py-1 rounded-lg text-sm font-fredoka">Course</span>
+              <span class="text-white font-medium text-lg">: BS Office Administration</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center py-2 border-b border-white/5 gap-2">
+              <span class="w-32 bg-brand-pink/20 text-brand-lightPink px-3 py-1 rounded-lg text-sm font-fredoka">Location</span>
+              <span class="text-white font-medium text-lg">: Ipil, Belison, Antque</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center py-2 border-b border-white/5 gap-2">
+              <span class="w-32 bg-brand-pink/20 text-brand-lightPink px-3 py-1 rounded-lg text-sm font-fredoka">Hobbies</span>
+              <span class="text-white font-medium text-lg">: Reading Wattpad, Singing</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 md:p-8 shadow-xl">
+          <h2 class="text-3xl font-fredoka text-brand-lightPink mb-6 border-b-2 border-brand-pink/30 pb-2 flex items-center gap-2">
+            <i class="fa-solid fa-address-book"></i> Contact :
+          </h2>
+          
+          <div class="space-y-6">
+
+            <a href="tel:09393012362" class="flex items-center gap-4 p-3 bg-brand-dark/40 rounded-2xl hover:bg-brand-pink/10 border border-white/5 transition-all group">
+              <span class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400">Mobile Number</p>
+                <p class="text-white font-semibold text-md">09393012362</p>
+              </div>
+            </a>
+
+            <a href="mailto:Mekayraner@gmail.com" class="flex items-center gap-4 p-3 bg-brand-dark/40 rounded-2xl hover:bg-brand-pink/10 border border-white/5 transition-all group">
+              <span class="w-12 h-12 bg-brand-pink/20 text-brand-pink rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400">Email Address</p>
+                <p class="text-white font-semibold text-md">Mekayraner@gmail.com</p>
+              </div>
+            </a>
+
+            <div class="flex items-center gap-4 p-3 bg-brand-dark/40 rounded-2xl border border-white/5">
+              <span class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-location-crosshairs"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400">Region</p>
+                <p class="text-white font-semibold text-md">Antique, Philippines</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2.5rem] p-6 md:p-8 shadow-xl">
+        <h2 class="text-4xl font-fredoka text-brand-lightPink mb-6 text-center drop-shadow-[0_2px_0_rgba(0,0,0,0.5)]">
+          ✨ My Photos ✨
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+          <div class="bg-brand-dark/60 border-2 border-brand-pink/40 rounded-2xl overflow-hidden group hover:scale-[1.03] transition-all duration-300">
+            <div class="h-44 relative bg-cover bg-center" style="background-image: url(mekay2.jpg)">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60"></div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="font-fredoka text-lg text-white">My Photos</h3>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark/60 border-2 border-brand-pink/40 rounded-2xl overflow-hidden group hover:scale-[1.03] transition-all duration-300">
+            <div class="h-44 relative bg-cover bg-center" style="background-image: url(mekay3.jpg)">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60"></div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="font-fredoka text-lg text-white">My Photos</h3>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark/60 border-2 border-brand-pink/40 rounded-2xl overflow-hidden group hover:scale-[1.03] transition-all duration-300">
+            <div class="h-44 relative bg-cover bg-center" style="background-image: url(mekay4.jpg)">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60"></div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="font-fredoka text-lg text-white">My Photos</h3>
+            </div>
+          </div>
+
+          <div class="bg-brand-dark/60 border-2 border-brand-pink/40 rounded-2xl overflow-hidden group hover:scale-[1.03] transition-all duration-300">
+            <div class="h-44 relative bg-cover bg-center" style="background-image: url(mekay5.jpg)">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60"></div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="font-fredoka text-lg text-white">Pageant Journey</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <div class="md:col-span-7 bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 shadow-xl">
+          <h2 class="text-3xl font-fredoka text-brand-lightPink mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-camera-retro"></i> Photography :
+          </h2>
+          
+          <div class="grid grid-cols-3 gap-3">
+    
+            <div class="bg-white p-2 rounded-lg shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+              <div class="aspect-[3/4] bg-cover bg-center rounded" style="background-image: url(sunset.jpg)"></div>
+              <p class="text-[10px] text-zinc-800 text-center mt-2 font-fredoka">Sunset</p>
+            </div>
+        
+            <div class="bg-white p-2 rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div class="aspect-[3/4] bg-cover bg-center rounded" style="background-image: url(coffee.jpg)"></div>
+              <p class="text-[10px] text-zinc-800 text-center mt-2 font-fredoka">Late Coffee</p>
+            </div>
+        
+            <div class="bg-white p-2 rounded-lg shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+              <div class="aspect-[3/4] bg-cover bg-center rounded" style="background-image: url(nature.jpg)"></div>
+              <p class="text-[10px] text-zinc-800 text-center mt-2 font-fredoka">Nature</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 shadow-xl flex flex-col justify-between">
+          <div>
+            <h2 class="text-3xl font-fredoka text-brand-lightPink mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-cubes"></i> My Apps :
+            </h2>
+            <p class="text-xs text-slate-300 mb-6">Tools I often use to layout, plan, write, and showcase designs.</p>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4">
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-[#1877F2] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-white text-xl">
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">Facebook</span>
+  </div>
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-gradient-to-b from-gray-200 to-gray-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-gray-800 text-xl">
+      <i class="fa-solid fa-camera"></i>
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">Camera</span>
+  </div>
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-black flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-white text-xl border border-gray-800">
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">TikTok</span>
+  </div>
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-[#1e1e1e] border-2 border-[#f3a922] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-[#f3a922] text-xs font-bold">
+      CODM
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">CODM</span>
+  </div>
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-white text-xl">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">Instagram</span>
+  </div>
+
+  <div class="flex flex-col items-center group">
+    <div class="w-12 h-12 rounded-2xl bg-[#FF6122] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform text-white text-xl">
+      <i class="fa-brands fa-readme"></i>
+    </div>
+    <span class="text-[10px] mt-2 text-slate-300">Wattpad</span>
+  </div>
+
+</div>
+</div>
+
+    </main>
+
+    <main id="profile-tab" class="tab-content space-y-8">
+      
+      <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2.5rem] p-6 md:p-8 shadow-xl">
+        <h2 class="text-4xl font-fredoka text-brand-lightPink mb-8 text-center drop-shadow-[0_2px_0_rgba(0,0,0,0.5)]">
+          🎓 Academic Background
+        </h2>
+
+        <div class="relative border-l-4 border-brand-pink/50 ml-4 md:ml-12 space-y-12">
+          
+          <div class="relative pl-8 md:pl-12 group">
+
+            <div class="absolute -left-[18px] top-1.5 w-8 h-8 rounded-full bg-brand-pink border-4 border-brand-purple flex items-center justify-center text-xs text-brand-dark group-hover:scale-125 transition-transform">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-dark bg-brand-lightPink px-3 py-1 rounded-full uppercase">COLLEGE</span>
+              <h3 class="text-2xl font-fredoka text-white mt-2">University of Antique</h3>
+              <p class="text-brand-pink font-semibold">2024 - Present</p>
+              <p class="text-slate-300 mt-2">
+                Currently pursuing a degree in <strong class="text-white">Office Administration</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-12 group">
+        
+            <div class="absolute -left-[18px] top-1.5 w-8 h-8 rounded-full bg-purple-500 border-4 border-brand-purple flex items-center justify-center text-xs text-white group-hover:scale-125 transition-transform">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-dark bg-purple-300 px-3 py-1 rounded-full uppercase">HIGH SCHOOL</span>
+              <h3 class="text-2xl font-fredoka text-white mt-2">Belison National School</h3>
+              <p class="text-brand-pink font-semibold">Batch 2023 - 2024</p>
+              <p class="text-emerald-400 font-semibold flex items-center gap-2 mt-1">
+                <i class="fa-solid fa-medal"></i> With Honors
+              </p>
+
+            </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-12 group">
+        
+            <div class="absolute -left-[18px] top-1.5 w-8 h-8 rounded-full bg-cyan-400 border-4 border-brand-purple flex items-center justify-center text-xs text-brand-dark group-hover:scale-125 transition-transform">
+              <i class="fa-solid fa-child"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-dark bg-cyan-200 px-3 py-1 rounded-full uppercase">ELEMENTARY SCHOOL</span>
+              <h3 class="text-2xl font-fredoka text-white mt-2">Trinidad San Remegio Antique</h3>
+              <p class="text-brand-pink font-semibold">Batch 2017 - 2018</p>
+              <p class="text-emerald-400 font-semibold flex items-center gap-2 mt-1">
+                <i class="fa-solid fa-medal"></i> With Honors
+              </p>
+              
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 shadow-xl space-y-6">
+          <h2 class="text-3xl font-fredoka text-brand-lightPink border-b-2 border-brand-pink/30 pb-2 flex items-center gap-2">
+            <i class="fa-solid fa-star"></i> Skills & Talents
+          </h2>
+          
+          <div class="space-y-4">
+        
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-white font-semibold flex items-center gap-2">
+                  <i class="fa-solid fa-music text-brand-pink"></i> Singing
+                </span>
+                <span class="text-brand-pink font-bold">Vocalist</span>
+              </div>
+              <div class="w-full bg-brand-dark rounded-full h-3.5 p-[2px] border border-white/10">
+                <div class="bg-brand-pink h-full rounded-full" style="width: 20%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-white font-semibold flex items-center gap-2">
+                  <i class="fa-solid fa-people-dancing text-brand-pink"></i> Dancing
+                </span>
+                <span class="text-brand-pink font-bold">Choreography</span>
+              </div>
+              <div class="w-full bg-brand-dark rounded-full h-3.5 p-[2px] border border-white/10">
+                <div class="bg-purple-500 h-full rounded-full" style="width: 50%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-white font-semibold flex items-center gap-2">
+                  <i class="fa-solid fa-folder-open text-brand-pink"></i> Office Administration
+                </span>
+                <span class="text-brand-pink font-bold">Organized</span>
+              </div>
+              <div class="w-full bg-brand-dark rounded-full h-3.5 p-[2px] border border-white/10">
+                <div class="bg-cyan-400 h-full rounded-full" style="width: 40%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2rem] p-6 shadow-xl flex flex-col justify-between">
+          <h2 class="text-3xl font-fredoka text-brand-lightPink border-b-2 border-brand-pink/30 pb-2 flex items-center gap-2">
+            <i class="fa-solid fa-heart"></i> Core Strengths
+          </h2>
+          
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="p-4 bg-brand-dark/50 border border-white/5 rounded-2xl text-center">
+              <span class="text-brand-pink text-3xl block mb-2"><i class="fa-solid fa-clipboard-check"></i></span>
+              <h3 class="font-fredoka text-white">Organized</h3>
+              <p class="text-xs text-slate-400 mt-1">Keeps assets and plans tidy.</p>
+            </div>
+
+            <div class="p-4 bg-brand-dark/50 border border-white/5 rounded-2xl text-center">
+              <span class="text-purple-400 text-3xl block mb-2"><i class="fa-solid fa-fire-flame-curved"></i></span>
+              <h3 class="font-fredoka text-white">Hardworking</h3>
+              <p class="text-xs text-slate-400 mt-1">Committed to every project.</p>
+            </div>
+
+            <div class="p-4 bg-brand-dark/50 border border-white/5 rounded-2xl text-center">
+              <span class="text-cyan-400 text-3xl block mb-2"><i class="fa-solid fa-seedling"></i></span>
+              <h3 class="font-fredoka text-white">Eager to Learn</h3>
+              <p class="text-xs text-slate-400 mt-1">Always open to new skills.</p>
+            </div>
+
+            <div class="p-4 bg-brand-dark/50 border border-white/5 rounded-2xl text-center">
+              <span class="text-emerald-400 text-3xl block mb-2"><i class="fa-solid fa-users"></i></span>
+              <h3 class="font-fredoka text-white">With Honors</h3>
+              <p class="text-xs text-slate-400 mt-1">Proven academic track record.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <main id="about-tab" class="tab-content space-y-8">
+      
+      <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2.5rem] p-6 md:p-8 shadow-xl relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pink/10 rounded-bl-full pointer-events-none"></div>
+
+        <div class="space-y-6">
+          <span class="px-4 py-1.5 bg-brand-pink text-brand-dark rounded-full font-fredoka text-sm inline-block">
+            Get To Know Me
+          </span>
+          
+          <h2 class="text-4xl font-fredoka text-white">
+            I am Mekaila
+          </h2>
+          
+          <div class="text-slate-200 space-y-4 text-base md:text-lg leading-relaxed">
+            <p>
+              Welcome to my digital space! I am a simple soul who finds infinite peace in the transition of warm skies, late-night introspective thoughts, and the pure warmth of a fresh cup of coffee. I believe in living life softly, loving those around me deeply, and taking time to celebrate every tiny spark in between.
+            </p>
+            <p>
+              Currently, I am navigating my studies in <strong class="text-brand-lightPink">Office Administration</strong> at the <strong class="text-white">University of Antique</strong>. This track allows me to combine my natural love for planning, structured layouts, and records keeping with advanced corporate management techniques.
+            </p>
+            <p>
+              For anyone looking to build a versatile professional foundation, pursuing a career in <strong class="text-brand-lightPink">Office Administration</strong> is highly recommended because it equips you with essential organizational, communication, and management skills that are critical and highly valuable across every single industry.
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-3xl font-fredoka text-center text-brand-lightPink">
+          ☕ Hobbies & Interests
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      
+          <div class="bg-brand-purple/70 border-2 border-brand-accent rounded-3xl p-6 text-center hover:bg-brand-purple transition-all duration-300">
+            <div class="w-16 h-16 bg-brand-pink/20 text-brand-pink rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+              <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <h3 class="font-fredoka text-xl text-white mb-2">Travelling</h3>
+            <p class="text-xs text-slate-300">Exploring warm coastal views and historic Antique landmarks.</p>
+          </div>
+
+          <div class="bg-brand-purple/70 border-2 border-brand-accent rounded-3xl p-6 text-center hover:bg-brand-purple transition-all duration-300">
+            <div class="w-16 h-16 bg-purple-500/20 text-purple-400 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <h3 class="font-fredoka text-xl text-white mb-2">Reading Wattpad</h3>
+            <p class="text-xs text-slate-300">Immersing in late-night thoughts and creative romance novels.</p>
+          </div>
+
+          <div class="bg-brand-purple/70 border-2 border-brand-accent rounded-3xl p-6 text-center hover:bg-brand-purple transition-all duration-300">
+            <div class="w-16 h-16 bg-cyan-400/20 text-cyan-400 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <h3 class="font-fredoka text-xl text-white mb-2">Watching Movies</h3>
+            <p class="text-xs text-slate-300">Finding inspiration in emotional screenplays and cinematic scenes.</p>
+          </div>
+
+          <div class="bg-brand-purple/70 border-2 border-brand-accent rounded-3xl p-6 text-center hover:bg-brand-purple transition-all duration-300">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <h3 class="font-fredoka text-xl text-white mb-2">Photography</h3>
+            <p class="text-xs text-slate-300">Capturing the aesthetic color gradients of local skylines and details.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-brand-purple/75 border-4 border-brand-accent rounded-[2.5rem] p-6 md:p-8 shadow-xl">
+        <h2 class="text-3xl font-fredoka text-brand-lightPink mb-4 text-center">
+          ✉️ Send a Message
+        </h2>
+        <p class="text-xs text-slate-300 text-center mb-8">Drop a message below!</p>
+        
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-brand-lightPink font-fredoka mb-1">Your Name</label>
+              <input type="text" required placeholder="John Doe" class="w-full bg-brand-dark/60 border border-brand-accent rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-pink text-sm">
+            </div>
+            <div>
+              <label class="block text-xs text-brand-lightPink font-fredoka mb-1">Your Email</label>
+              <input type="email" required placeholder="name@example.com" class="w-full bg-brand-dark/60 border border-brand-accent rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-pink text-sm">
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-xs text-brand-lightPink font-fredoka mb-1">Your Message</label>
+            <textarea rows="4" required placeholder="Type your notes here..." class="w-full bg-brand-dark/60 border border-brand-accent rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-pink text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-brand-pink hover:bg-brand-pink/90 text-brand-dark font-fredoka font-bold rounded-xl shadow-lg transition-transform hover:-translate-y-[2px]">
+            Send Message 🚀
+          </button>
+        </form>
+
+        <div id="contact-success-box" class="hidden mt-4 p-4 bg-emerald-500/20 border border-emerald-500 text-emerald-300 rounded-xl text-center text-sm">
+          🎉 Thank you! Your message has been prepared for Mekaila successfully.
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-slate-500 text-xs mt-8 space-y-2 border-t border-white/5">
+      <p>© 2026 Mekaila. Designed with retro Y2K neon layouts.</p>
+      <p>Belison, Antique, Western Visayas, Philippines</p>
+    </footer>
+
+  </div>
+
+  <script>
+  
+    function switchTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-pink', 'text-brand-dark', 'font-semibold', 'shadow-md');
+        btn.classList.add('text-slate-300', 'hover:text-white');
+      });
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-300', 'hover:text-white');
+        activeBtn.classList.add('bg-brand-pink', 'text-brand-dark', 'font-semibold', 'shadow-md');
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const successBox = document.getElementById('contact-success-box');
+      if (successBox) {
+        successBox.classList.remove('hidden');
+        event.target.reset();
+        setTimeout(() => {
+          successBox.classList.add('hidden');
+        }, 5000);
+      }
+    }
+  </script>
+</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="lab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url(1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        
+        .signup-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .input-email {
+            width: 100%;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .hint {
+            color: #ccc;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4a1e20; 
+            color: #888;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2 style="color: #FFFFFF;">Sign Up</h2>
+        
+        <form onsubmit="return false;">
+            <input type="text" class="input-email" placeholder="Email">
+            <p class="hint">A verification code will be sent to the email above.</p>
+            
+            <button type="button" class="verify-btn">Verify email address</button>
+        </form>
+
+        <h3 style="color: #FFFFFF; margin-top: 50px;">Sign up / Login with SNS account</h3>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-apple"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>

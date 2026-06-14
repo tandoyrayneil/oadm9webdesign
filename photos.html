@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recap Project</title>
+
+  <!-- OSWALD FONT (ALL TEXT) -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  
+  font-family: "Oswald", sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  color: white;
+
+  background: radial-gradient(circle at 20% 20%, #2b0000 0%, transparent 40%),
+              radial-gradient(circle at 80% 30%, #8b0000 0%, transparent 35%),
+              radial-gradient(circle at 50% 80%, #000000 0%, #0a0a0a 60%);
+  background-color: black;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background: rgba(0,0,0,.45);
+
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav-links{
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item{
+    text-decoration: none;
+
+    color: #6e7687;
+
+    font-family: 'Oswald', sans-serif;
+
+    font-weight: 700;
+
+    font-size: .95rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transition: all .3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active{
+    color: #ffffff;
+}
+
+.nav-item.active{
+    background-color: rgba(255,255,255,.1);
+
+    padding: 8px 20px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,.08);
+}
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 3.5rem;
+  letter-spacing: 6px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  text-shadow:
+      0 0 20px rgba(225, 255, 255, .08);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 40px 50px;
+}
+
+.card{
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    box-shadow:
+        0 0 15px rgba(255,0,0,.15);
+
+    transition: .3s ease;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: .4s ease;
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card:hover{
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,.3),
+        0 0 40px rgba(255,0,0,.15);
+}
+
+
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall{
+    grid-row: span 2;
+    height: 455px;
+}
+.bl-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:20px;
+
+    padding:20px 40px 60px;
+}
+
+.bl-card{
+    background:rgba(15,15,15,.85);
+
+    border:1px solid rgba(255,77,109,.25);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 0 10px rgba(255,77,109,.08);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.bl-card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(255,77,109,.7);
+
+    box-shadow:
+        0 0 15px rgba(255,77,109,.35),
+        0 0 35px rgba(255,77,109,.15);
+}
+
+.poster{
+    width:100%;
+
+    height:160px;
+
+    object-fit:cover;
+
+    transition:.4s ease;
+}
+
+.bl-card:hover .poster{
+    transform:scale(1.05);
+}
+
+.bl-content{
+    padding:15px;
+}
+
+.bl-title{
+    font-size:1rem;
+
+    color:#f5e6c8;
+
+    letter-spacing:1px;
+
+    margin-bottom:5px;
+}
+
+.bl-details{
+    color:#a2aab8;
+
+    font-size:.75rem;
+
+    margin-bottom:10px;
+}
+
+.bl-reflection{
+    color:#d5dbe5;
+
+    font-size:.8rem;
+
+    line-height:1.5;
+
+    max-height: 120px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+.bl-section-header{
+    text-align:center;
+
+    margin-top:80px;
+    margin-bottom:50px;
+}
+
+.bl-section-title{
+    font-size:2.8rem;
+
+    letter-spacing:6px;
+
+    color:#f5e6c8;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+    text-shadow:
+        0 0 15px rgba(245,230,200,.15);
+}
+
+.bl-section-subtitle{
+    color:#9aa3b2;
+
+    font-size:1rem;
+
+    letter-spacing:2px;
+}
+.break-row{
+    grid-column: 1 / -1;
+    height: 0;
+}
+
+
+.achievement-section{
+    padding:80px 40px;
+}
+
+.achievement-title{
+    text-align:center;
+    font-size:2.8rem;
+    letter-spacing:6px;
+    color:#f5e6c8;
+    margin-bottom:50px;
+}
+
+
+
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+
+
+.flip-card{
+    height:350px;
+    perspective:1000px;
+}
+
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .8s;
+    transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    backface-visibility:hidden;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    border:1px solid rgba(255,77,109,.25);
+
+    background:rgba(15,15,15,.9);
+}
+
+
+
+.flip-front img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+
+.flip-back{
+    transform:rotateY(180deg);
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+.flip-back h3{
+    color:#f5e6c8;
+    margin-bottom:10px;
+}
+
+.flip-back span{
+    color:#ff4d6d;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.flip-back p{
+    color:#d5dbe5;
+    line-height:1.6;
+    font-size:.9rem;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  
+  <header class="navbar">
+    <nav class="nav-links">
+        <a href="aboutme.html" class="nav-item">HOME</a>
+        <a href="photos.html" class="nav-item active">PHOTOS</a>
+        <a href="others.html" class="nav-item">OTHERS</a>
+    </nav>
+</header>
+
+  
+  <main class="grid">
+    <div class="card">
+      <img src="nami.jpg" alt="sideview">
+    </div>
+    <div class="card">
+      <img src="chair.jpg" alt="Top si Less">
+    </div>
+    <div class="card">
+      <img src="hotel.jpg" alt=" Tos Less man">
+    </div>
+    <div class="card">
+      <img src="batpic.png" alt="Angas Looks">
+    </div>
+
+    <div class="card wide">
+      <img src="khemjira.jpg" alt="Gwapo">
+    </div>
+    <div class="card tall">
+      <img src="pilipinapose.png" alt="Gwapa Lang">
+    </div>
+    <div class="card">
+      <img src="kibitbalikat.jpg" alt="Bakla yern?">
+    </div>
+    <div class="card">
+      <img src="letterformyself.jpg" alt="Letter ah">
+    </div>
+
+    <div class="card">
+      <img src="about.png" alt="bakla">
+    </div>
+    <div class="card">
+      <img src="CR.jpg" alt="sa bus">
+    </div>
+  </main>
+
+<div class="bl-section-header">
+
+    <h1 class="bl-section-title">
+        BL SERIES & MOVIE COLLECTION
+    </h1>
+
+    <p class="bl-section-subtitle">
+        Stories that left a permanent mark on my heart. Watch at your own risk.
+    </p>
+
+</div>
+
+  <div class="bl-grid">
+
+    
+    <div class="bl-card">
+
+        <img src="bishonen.jpg"
+             alt="BISHONEN"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                BISHONEN
+            </h3>
+
+            <p class="bl-details">
+                Hong Kong • 1998
+            </p>
+
+            <p class="bl-reflection">
+                A timeless classic that brilliantly captures the raw reality of the queer experience. It beautifully, yet painfully, illustrates how loving someone deeply isn't always enough to maintain a relationship when faced with complex realities. Created in 1998, the film was decades ahead of its time, showcasing exceptional writing and a stunning visual aesthetic that still holds up masterfully today.
+            </p>
+
+        </div>
+
+    </div>
+
+    
+    <div class="bl-card">
+
+        <img src="spirealm.jpg"
+             alt="Unknown"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                THE SPIREALM
+            </h3>
+
+            <p class="bl-details">
+                China • 2023
+            </p>
+
+            <p class="bl-reflection">
+                I don't usually get emotional watching dramas, but The Spirealm completely broke me. Because it’s a Chinese adaptation, the main leads (played by Xia Zhiguang and Huang Junjie) can’t have an explicit romance, so their incredible chemistry is built entirely through subtle gestures, protective glances, and silent devotion. It makes you lean in and feel every bit of their bond.
+
+                But what truly made me go numb was the sheer tragedy of the supporting cast. Watching three of the players' closest friends die back-to-back inside the game felt like a physical blow. Li Dongyuan getting stabbed just to save the main cast, Tan Zaozao giving her final, heart-wrenching speech in the bathroom right before her death, and Chen Qianli dying over a devastating misunderstanding with his twin brother... it was completely heartbreaking. For someone who rarely cries at shows, seeing this found family sacrifice everything for each other left me staring at a black screen, completely teary-eyed and empty.
+            </p>
+
+        </div>
+
+    </div>
+
+    
+    <div class="bl-card">
+
+        <img src="dew.jpg"
+             alt="Dew the movie"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                DEW 
+            </h3>
+
+            <p class="bl-details">
+                Thailand • 2019
+            </p>
+
+            <p class="bl-reflection">
+                This film left my heart completely aching because of its tragic ending. Even with the profound beauty of their reincarnation—returning in a timeline and in the exact bodies they had once hoped for, where loving each other is finally free from hardship—I still find myself deeply saddened by their previous era. The pain of what they went through back then lingers. It perfectly reflects the real-life struggles of gay people, capturing a deep, genuine love that society unfortunately still tries to view as abnormal.
+            </p>
+
+        </div>
+
+    </div>
+     <div class="bl-card">
+
+        <img src="your.jpg"
+             alt="your name"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                 YourNameEngravedHerein
+            </h3>
+
+            <p class="bl-details">
+                Taiwan • 2020
+            </p>
+
+            <p class="bl-reflection">
+                Your Name Engraved Herein is such a painfully beautiful story. I kept holding onto hope for a happy ending, but reality had other plans. Knowing that the film depicts the writer's actual life story adds a layer of raw, heartbreaking truth to every scene. It is deeply painful to watch the person who was once your everything move on to live a completely separate life. It leaves you with the crushing awareness that the intimate kiss they shared on the beach ultimately changed nothing; the shared memories will linger forever, but the heart that once beat so wildly for that love no longer works.
+            </p>
+
+        </div>
+      </div>
+
+       <div class="bl-card">
+
+        <img src="night.jpg"
+             alt="Sokor BL"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                 NIGHT FLIGHT
+            </h3>
+
+            <p class="bl-details">
+                South Korea • 2014
+            </p>
+
+            <p class="bl-reflection">
+                I always thought that classic or older Korean BL films were destined to end in the most tragic ways—with characters dying, being killed, or forced to marry and start traditional families. Night Flight is beautifully different. It masterfully explores how a seemingly straight person develops a deep, romantic relationship with his admirer amidst a harsh and unforgiving high school environment.
+
+                Beyond the romance, the film tackles the profound importance of building a humane society—one where negativity is stripped away, and diverse sexual orientations are valued and respected. The emotional weight this drama carries is intense; if you are an emotional person, it will easily make you cry. Every element was executed perfectly—from the stellar actors and raw script to the brilliant flow of the story. Most importantly, it breaks the tragic cycle: the main characters do not die. Instead, the curtains close on a note of resilient hope, leaving them to figure out the rest of their lives, together.
+            </p>
+
+        </div>
+      </div>
+
+      <div class="bl-card">
+
+        <img src="toldu.jpg"
+             alt="moviethai"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                IToldSunsetAboutYou
+            </h3>
+
+            <p class="bl-details">
+                Thailand • 2020
+            </p>
+
+            <p class="bl-reflection">
+                I Told Sunset About You is a masterclass in coming-of-age queer cinema. It beautifully captures the agonizing, raw reality of first love, where confusion and societal expectations collide. It doesn't shy away from the painful side of loving someone—portraying the suffocating weight of jealousy, the fear of self-acceptance, and the heartbreak of family pressure.
+
+                What makes this show incredible is its breathtaking visual storytelling. It utilizes a gorgeous, nostalgic color palette—heavy with deep red and blue symbolism—and an intimate script that makes your heart ache with every unsaid word. It is a deeply moving, cinematic experience that perfectly respects the true, complicated, and sometimes painful nature of queer youth, proving that the journey to love is rarely effortless.
+            </p>
+
+        </div>
+      </div>
+
+<div class="bl-card">
+
+        <img src="sense.jpg"
+             alt="trauma"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                THE EIGHT SENSE
+            </h3>
+
+            <p class="bl-details">
+                South Korea • 2023
+            </p>
+
+            <p class="bl-reflection">
+                The Eighth Sense completely redefined what a modern Korean BL can be. It is an intensely raw and breathtakingly cinematic series that dives deep into the realities of mental health, trauma, and the sheer terror of opening your heart when you are drowning in your own darkness.
+
+                What I love most is how the characters defy the usual dynamics; despite being the more timid "country boy," Ji Hyun's love becomes a fiercely resilient anchor for Jae Won as he battles depression and grief. The visual aesthetic is stunning, using the ocean and surfing as a gorgeous metaphor for navigating life's unpredictable waves. It is a beautifully heavy, realistic, and emotional journey that makes your heart ache, but ultimately rewards you with a healing, profound sense of hope as they choose to face the world together.
+            </p>
+
+        </div>
+      </div>
+
+      <div class="bl-card">
+
+        <img src="stars.jpg"
+             alt="Heart ni Turfun"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                ATaleOfOneThousandStars
+            </h3>
+
+            <p class="bl-details">
+                Thailand • 2021
+            </p>
+
+            <p class="bl-reflection">
+                A Tale of Thousand Stars beautifully illustrates how a massive shift in circumstances can completely change the way we look at the world and how we act. We see this transformation through the main character, a wealthy, arrogant city boy who receives a second chance at life and later becomes a volunteer teacher in a remote province of Thailand.  The series goes far beyond romance; it highlights a deep love for community and the importance of protecting less privileged people by sharing knowledge. This is especially true when powerful, corrupt groups attempt to exploit the local farmers and their crops. It proves that even if someone has a reckless or flawed past, it doesn't mean they are incapable of changing for the better. Ultimately, this BL series is an absolute masterpiece that brilliantly balances and contrasts the harsh realities of city life with the raw, grounded beauty of the province.
+            </p>
+
+        </div>
+      </div>
+
+      <div class="bl-card">
+
+        <img src="2gether.jpg"
+             alt="Global Hit"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                2GETHER
+            </h3>
+
+            <p class="bl-details">
+                Thailand • 2020
+            </p>
+
+            <p class="bl-reflection">
+                While much of my collection focuses on the heavy, bittersweet, and raw realities of queer cinema, 2gether: The Series holds a special place as a pure, feel-good classic. It takes the classic "fake dating" trope and turns it into a masterclass of romantic comedy, following the addictive dynamic between a popular campus musician and a persistent student.
+
+                What makes this series stand out is its comforting, bright, and effortless energy. It provides a much-needed breath of fresh air—proving that queer stories don't always have to end in heartbreak or heavy societal trauma to be impactful. With its iconic guitar soundtrack, memorable humor, and lighthearted charm, it is a comforting masterpiece that shows the bright, joyful, and sweet side of falling in love.
+            </p>
+
+        </div>
+      </div>
+
+      <div class="bl-card">
+
+        <img src="between.jpg"
+             alt="coma"
+             class="poster">
+
+        <div class="bl-content">
+
+            <h3 class="bl-title">
+                InBetweenSeasons
+            </h3>
+
+            <p class="bl-details">
+                South Korea • 2018
+            </p>
+
+            <p class="bl-reflection">
+                In Between Seasons is a quiet, devastatingly beautiful masterpiece of Korean queer cinema. It breaks away from typical romance tropes to explore the heavy, quiet agony of devotion during a tragedy. Following a catastrophic car accident that leaves one of the main characters in a long-term coma, the film focuses on the raw reality of his boyfriend staying by his side to care for him in the hospital. It is a profoundly moving look at love under the heaviest circumstances, beautifully portraying how a queer relationship navigates not only a medical crisis but the painful reality of a mother discovering her son's hidden truth. It is an unforgettable tear-jerker that captures the true meaning of staying together through the darkest seasons of life.
+            </p>
+
+        </div>
+      </div>
+
+  </div>
+</div>
+</div>
+
+  <section class="achievement-section">
+
+    <h2 class="achievement-title">
+        ACHIEVEMENTS & CERTIFICATES
+    </h2>
+
+    <div class="achievement-grid">
+
+        
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="deans.jpg" alt="1st Sem">
+                </div>
+
+                <div class="flip-back">
+                    <h3> Dean's Lister</h3>
+
+                    <span>2024-2025</span>
+
+                    <p>
+                       Felt like my hardwork paid off when I was one of the Dean's Lister in our class, last year, 1st Semester of the school year  2024-2025.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+       
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="Champion.jpg" alt="qz bee">
+                </div>
+
+                <div class="flip-back">
+                    <h3>PASOA - Skills Competition</h3>
+
+                    <span>2025 - Decmeber</span>
+
+                    <p>
+                        3 great minds combined together that made us the Champion in Quiz Bee, a sureal feeling and mixed of emotion to win representing my beloved section, 2B.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="keyboarding.jpg" alt="participant">
+                </div>
+                <div class="flip-back">
+                    <h3>Keyboarding</h3>
+
+                    <span>2024 - December</span>
+
+                    <p>
+                        Participated in PASOA skills competition (Keyboarding) under our section, BSOA 1B. I failed to enter the semis but it was a great experience to represent my beloved section.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="nc2.jpg" alt="achieve">
+                </div>
+
+                <div class="flip-back">
+                    <h3>Contact Center Services NC II</h3>
+
+                    <span>2023 - November</span>
+
+                    <p>
+                        TESDA certification demonstrating
+                        competency in customer service and
+                        communication skills.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="senior.jpg" alt="91 average">
+                </div>
+
+                <div class="flip-back">
+                    <h3>Graduated With Honor</h3>
+
+                    <span>2023 - June</span>
+
+                    <p>
+                        I graduated with honors during my senior highschool. My parents are both proud of me for graduating with an award to hang in our wall.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="consistent.jpg" alt="consistent">
+                </div>
+
+                <div class="flip-back">
+                    <h3>During SHS</h3>
+
+                    <span>2022-2023</span>
+
+                    <p>
+                        The combination of hardwork and consitency shines through as I ended each semester with a bang!.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="elementary.jpg" alt="">
+                </div>
+
+                <div class="flip-back">
+                    <h3>Elementary Achievements</h3>
+
+                    <span>2016-2017</span>
+
+                    <p>
+                        These cute award, as I can remember is a testament of me trying things out of my Comfort Zone. Academic Award, Champion in Municipal Meet - Volleyball, and Representative of Voice Choir.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="firstart.jpg" alt="nice">
+                </div>
+
+                <div class="flip-back">
+                    <h3>First Art</h3>
+
+                    <span>2025 - September</span>
+
+                    <p>
+                        Art was one of my greatest enemy in throughout my life. I was a bit surprised that my weakness can be learned and practice.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+
+                <div class="flip-front">
+                    <img src="feirce.jpg" alt="amaby">
+                </div>
+
+                <div class="flip-back">
+                    <h3>Art</h3>
+
+                    <span>2025 - October</span>
+
+                    <p>
+                        After my first paint, I tried to sketch and color it using KULAI, a filipino colored pencil.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>    
+</body>
+</html>

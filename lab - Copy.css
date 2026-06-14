@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #050714;
+    color: white;
+    min-height: 100vh;
+}
+nav{
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2{
+    color: white;
+    font-size: 28px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover{
+    color: #ff3b3b;
+}
+.container{
+    width: 400px;
+    margin: 80px auto;
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+    0 0 15px rgba( 255, 255, 255, 0.06);
+}
+
+.container h2{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.container h3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: darkred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+    background-color: #ff3b3b;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+input[type="email"],
+input[type="password"]{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 15px 5px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 1px solid #ff3b3b;
+}
+
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+button{
+    padding: 15px;
+    border: none;
+    background-color: darkred;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+button:hover{
+    background-color: red;
+    transform: translateY(-3px);
+    box-shadow: 
+    0 5px 1px rgba( 255, 59, 59, 0.4);
+}
+
+
+.links{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links a:hover{
+    color: #ff3b3b;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+    0 0 10px white,
+    0 0 20px white,
+    0 0 30px white;
+    color: white;
+    transform: scale(1.08);
+    letter-spacing: 1px;
+}

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is Ray Neil?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 50%, #0c1926 0%, #04080e 100%);
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-page-container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(5, 12, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #6e7687;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #ffffff;
+        }
+
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 4px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dashboard-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .left-banner {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: sticky;
+            top: 40px;
+        }
+
+        .greeting-text {
+            margin-bottom: 20px;
+        }
+
+        .sub-hello {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #a0a7b5;
+            font-weight: 500;
+        }
+
+        .profile-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .glowing-avatar-container {
+            position: relative;
+            width: 100%;
+            max-width: 340px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 25px;
+        }
+
+
+        .blue-glow-circle {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(220, 20, 60, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: 40px;
+            z-index: 1;
+        }
+
+        .avatar-img {
+            width: 100%;
+            z-index: 2;
+            object-fit: cover;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.7));
+        }
+
+        .right-info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-block,
+        .meta-details-grid {
+            background: rgba(15, 15, 15, 0.45);
+            border: 1px solid rgba(220, 20, 60, 0.35);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 12px rgba(220, 20, 60, 0.15), 0 0 30px rgba(220, 20, 60, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .info-block:hover,
+        .meta-details-grid:hover {
+            border-color: rgba(220, 20, 60, 0.7);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.3), 0 0 45px rgba(220, 20, 60, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .info-block h2,
+        .meta-col h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #ff4d6d;
+            text-shadow: 0 0 5px rgba(220,20,60,0.4);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .about-p {
+            color: #a2aab8;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+
+        .personal-info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .personal-info-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04); 
+            transition: background-color 0.2s;
+        }
+
+        .personal-info-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .personal-info-table td {
+            padding: 12px 10px;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .info-label {
+            color: #ffffff;              
+            font-weight: 600;
+            width: 30%;                  
+            text-transform: uppercase; 
+        }
+
+        .info-value {
+            color: #a2aab8;            
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .skill-icon-wrapper {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .skill-icon-wrapper:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(220, 20, 60, 0.6);
+        }
+
+        .skill-icon {
+            width: 38px;
+            height: 38px;
+        }
+
+        .meta-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 0; 
+            padding-top: 25px;
+        }
+
+        .meta-col h3 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .meta-year {
+            font-family: 'Rajdhani', sans-serif;
+            color: #a2aab8;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .meta-main {
+            font-family: 'Rajdhani', sans-serif;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .meta-sub {
+            font-family: 'Rajdhani', sans-serif;
+            color: #a2aab8;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            color: #dee4ee;
+        }
+
+        .lang-pct {
+            color: #7b8496;
+        }
+
+        .floating-dashboard {
+            width: 100%;
+            max-width: 340px;
+            margin-top: 15px;
+        }
+
+        .floating-dashboard summary {
+            list-style: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 15px;
+            background: rgba(15,15,15,.85);
+            border: 1px solid rgba(220,20,60,.35);
+            border-radius: 14px;
+            color: #ff4d6d;
+            font-family: 'Oswald', sans-serif;
+            font-size: .9rem;
+            letter-spacing: 1px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(220,20,60,.15);
+            transition: all 0.2s ease;
+        }
+
+        .floating-dashboard summary:hover {
+            border-color: rgba(220,20,60,.7);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .floating-dashboard summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .dashboard-section {
+            background: rgba(15,15,15,.85);
+            border-left: 2px solid crimson;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .dashboard-section h4 {
+            color: #ff4d6d;
+            margin-bottom: 8px;
+            font-size: .95rem;
+        }
+
+        .dashboard-section p {
+            color: #a2aab8;
+            font-size: .9rem;
+            line-height: 1.5;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(220,20,60,.15);
+            border: 1px solid rgba(220,20,60,.5);
+            border-radius: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all .3s ease;
+        }
+
+        .resume-btn:hover {
+            background: rgba(220,20,60,.35);
+            box-shadow: 0 0 15px rgba(220,20,60,.4);
+            transform: translateY(-2px);
+        }
+
+
+        @media (max-width: 900px) {
+            .dashboard-content {
+                flex-direction: column;
+            }
+            .left-banner {
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+            .meta-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-page-container">
+        
+        <header class="navbar">
+            <nav class="nav-links">
+                <a href="home.html" class="nav-item active">HOME</a>
+                <a href="photos.html" class="nav-item">PHOTOS</a>
+                <a href="others.html" class="nav-item">OTHERS</a>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            
+            <section class="left-banner">
+                <div class="greeting-text">
+                    <p class="profile-name">RAY NEIL TANDOY</p>
+                    <h1 class="sub-hello">OFFICE ADMINISTRATION STUDENT</h1>
+                </div>
+                <div class="glowing-avatar-container">
+                    <div class="blue-glow-circle"></div>
+                    <img src="p.png" alt="Ray Neil" class="avatar-img">
+                </div>
+
+                <details class="floating-dashboard">
+                    <summary>VIEW MORE DETAILS</summary>
+                    <div class="dashboard-section">
+                        <h4>🎮 HOBBIES</h4>
+                        <p>Watching Movies, Music, Learning, Exploring Technology</p>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4>🎨 INTERESTS</h4>
+                        <p>Web Design, BL, Learning Mandarin</p>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4>🏆 TALENTS</h4>
+                        <p>Dancing, Volleyball, Leadership</p>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4>⚡ SKILLS</h4>
+                        <p>Word, Powerpoint, HTML, Typing</p>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4>🎯 CAREER GOALS</h4>
+                        <p>To work in an office far away from my province.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section class="right-info">
+                
+                <div class="info-block">
+                    <h2>INTRO</h2>
+                    <p class="about-p">
+                        Hi everyone, I'm Ray! I'm a second-year Office Administration student, but lately, I've been diving deep into web design. I've been learning the basics of HTML and CSS, practicing things like adding multimedia and coding links. Right now, I'm putting it all together to build my own website for my OADM 9 final project. I hope you like it!
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2>PERSONAL BACKGROUND</h2>
+                    <table class="personal-info-table">
+                        <tr>
+                            <td class="info-label">Full Name:</td>
+                            <td class="info-value">RAY NEIL AGTING TANDOY</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Age / Sex:</td>
+                            <td class="info-value">20 Years Old / Male</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Birthdate:</td>
+                            <td class="info-value">July 12, 2005</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Contact #:</td>
+                            <td class="info-value">0965 396 4046</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Email Address:</td>
+                            <td class="info-value">tandoyrayneil1@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Address:</td>
+                            <td class="info-value">La Rioja, Patnongon, Antique</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Zodiac Sign:</td>
+                            <td class="info-value">Cancer</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Program:</td>
+                            <td class="info-value">BS in Office Administration</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Department:</td>
+                            <td class="info-value">College of Management and Governance (CMG)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-block">
+                    <h2>SOFTWARE SKILLS</h2>
+                    <div class="skills-grid">
+                        <div class="skill-icon-wrapper"><img src="https://img.icons8.com/color/144/microsoft-word-2019.png" alt="Word" class="skill-icon"></div>
+                        <div class="skill-icon-wrapper"><img src="https://img.icons8.com/color/144/microsoft-excel-2019.png" alt="Excel" class="skill-icon"></div>
+                        <div class="skill-icon-wrapper"><img src="https://img.icons8.com/color/144/microsoft-powerpoint-2019.png" alt="PowerPoint" class="skill-icon"></div>
+                        <div class="skill-icon-wrapper"><img src="https://img.icons8.com/color/144/microsoft-office-2019.png" alt="Office 365" class="skill-icon"></div>
+                        <div class="skill-icon-wrapper"><img src="https://img.icons8.com/color/144/microsoft-outlook-2019.png" alt="Outlook" class="skill-icon"></div>
+                    </div>
+                </div>
+
+                <div class="meta-details-grid">
+                    <div class="meta-col">
+                        <h3>EDUCATION</h3>
+                        <p class="meta-main">● BS OFFICE ADMINISTRATION</p>
+                        <p class="meta-year">2024 - Present</p>
+                        <p class="meta-sub">UNIVERSITY OF ANTIQUE - MAIN CAMPUS</p>
+                        <p class="meta-main">● GENERAL ACADEMIC TRACK</p>
+                        <p class="meta-year">2021 - 2023</p>
+                        <p class="meta-sub">ST. AUGUSTINE'S ACADEMY</p>
+                        <p class="meta-main">● JUNIOR HIGH-SCHOOL</p>
+                        <p class="meta-year">2017 - 2020</p>
+                        <p class="meta-sub">ST. AUGUSTINE'S ACADEMY</p>
+                        <p class="meta-main">● ELEMENTARY</p>
+                        <p class="meta-year">2010 - 2016</p>
+                        <p class="meta-sub">LA RIOJA ELEMENTARY SCHOOL</p>
+                    </div>
+
+                    <div class="meta-col">
+                        <h3>EXPERIENCES</h3>
+                        <p class="meta-main">VICE-MAYOR</p>
+                        <p class="meta-sub">CURRENTLY THE VICE-MAYOR OF BSOA 2B</p>
+                        <p class="meta-main">SHOP ASSISTANT</p>
+                        <p class="meta-sub">6 MONTHS OF SERVICE AT MANABAT STORE</p>
+                        <p class="meta-main">MARKET VENDOR</p>
+                        <p class="meta-sub">COMMUNICATING WITH THE CUSTOMERS IN THE MARKET</p>
+                    </div>
+
+                    <div class="meta-col">
+                        <h3>LANGUAGE</h3>
+                        <div class="lang-row"><span>TAGALOG</span> <span class="lang-pct">100%</span></div>
+                        <div class="lang-row"><span>ENGLISH</span> <span class="lang-pct">80%</span></div>
+                        <div class="lang-row"><span>KARAY-A</span> <span class="lang-pct">100%</span></div>
+                        <div class="lang-row"><span>MANDARIN</span> <span class="lang-pct">10%</span></div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h2>SOCIAL MEDIA ACCOUNTS</h2>
+                    <table class="personal-info-table">
+                        <tr>
+                            <td class="info-label">FACEBOOK:</td>
+                            <td class="info-value">RAY NEIL AGTING TANDOY <br> REY HERMOSO</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">INSTAGRAM:</td>
+                            <td class="info-value">ZACHIEEZZ</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">TELEGRAM:</td>
+                            <td class="info-value">XIAO YAN</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">GIZOMO:</td>
+                            <td class="info-value">ZACHIEZZ</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-block">
+                    <h2>MY RESUME</h2>
+                    <p class="about-p">You can view or download my resume below.</p>
+                    <br>
+                    <a href="Resume.pdf" target="_blank" class="resume-btn">DOWNLOAD RESUME</a>
+                </div>
+                
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
